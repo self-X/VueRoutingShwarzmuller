@@ -9,7 +9,8 @@ export const routes = [
     { path: '/', name: 'home', components:{
         default: Home,
         'header-top': Header,
-    } },
+      }
+    },
     { path: '/user', components: {
         default: User,
         'header-bottom': Header,
@@ -18,7 +19,12 @@ export const routes = [
             { path: '', component: UserStart },
             { path: ':id/', component: UserDetail },
             { path: ':id/edit', component: UserEdit, name: 'userEdit'},
-        ]},
-]
+        ],
+        name: 'userHomePage'
+    },
+        
+    { path: '/redirect-me', redirect: {name: 'userHomePage'} },
+    { path: '*', redirect: '/' }    
+    ]
 
-//239 Redirecting - cuur video
+//241 
